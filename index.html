@@ -4,59 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aravindan P | Embedded Software Engineer</title>
+
+    <!-- Custom Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* Resetting basic styles */
+        /* Basic Reset and Font */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #f4f7fc;
             color: #333;
         }
+
+        /* Header Styling */
         header {
             background-color: #4a90e2;
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
         header h1 {
             font-size: 2.5em;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
         header p {
             font-size: 1.1em;
         }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #ffda79;
+            margin-top: 15px;
+        }
+
+        /* Container Styling */
         .container {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 30px auto;
             padding: 20px;
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* Section and Title Styling */
         h2 {
             color: #4a90e2;
-            margin-bottom: 15px;
             font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
         .section {
             margin-bottom: 30px;
         }
+
+        /* Project Cards */
         .project {
             margin-bottom: 20px;
             padding: 15px;
             border-radius: 6px;
             background-color: #f9f9f9;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .project h3 {
-            margin-bottom: 8px;
+            color: #333;
             font-size: 1.2em;
-            color: #555;
+            margin-bottom: 5px;
+            font-weight: 600;
         }
         .project p {
             font-size: 0.95em;
@@ -69,6 +90,8 @@
         ul li {
             margin-bottom: 8px;
         }
+
+        /* Footer Styling */
         footer {
             text-align: center;
             padding: 15px;
@@ -76,12 +99,14 @@
             color: white;
             font-size: 0.9em;
         }
+        
+        /* Contact Information */
         .contact-info {
-            margin-bottom: 20px;
             font-size: 1em;
+            margin-top: 10px;
         }
         .contact-info a {
-            color: #4a90e2;
+            color: #ffda79;
             text-decoration: none;
         }
     </style>
@@ -89,8 +114,13 @@
 <body>
 
     <header>
+        <!-- Profile Image Placeholder -->
+        <img src="https://github.com/aravindanpalani/aravindan-profile/blob/main/photo.png?raw=true" alt="Aravindan Profile Picture" class="profile-image">
         <h1>Aravindan P</h1>
-        <p>Embedded Software Engineer | Email: <a href="mailto:paravindanpalani@gmail.com" style="color: #ffda79;">paravindanpalani@gmail.com</a> | Phone: +91-9944607314</p>
+        <p>Embedded Software Engineer</p>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:paravindanpalani@gmail.com">paravindanpalani@gmail.com</a> | Phone: +91-9944607314</p>
+        </div>
     </header>
 
     <div class="container">
