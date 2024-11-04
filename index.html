@@ -6,7 +6,7 @@
     <title>Aravindan P | Embedded Software Engineer</title>
 
     <!-- Custom Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         /* Basic Reset and Font */
@@ -16,62 +16,82 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f7fc;
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f9;
             color: #333;
+            display: flex;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Header Styling */
-        header {
-            background-color: #4a90e2;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(135deg, #4a90e2, #5a68c6);
+            color: #fff;
+            padding: 40px 20px;
+            position: fixed;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        header h1 {
-            font-size: 2.5em;
-            font-weight: bold;
+        .sidebar h1 {
+            font-size: 1.8em;
             margin-bottom: 10px;
+            text-align: center;
         }
-        header p {
-            font-size: 1.1em;
+        .sidebar p {
+            font-size: 0.95em;
+            opacity: 0.8;
+            margin-bottom: 40px;
+            text-align: center;
         }
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 5px solid #ffda79;
-            margin-top: 15px;
-        }
-
-        /* Container Styling */
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Section and Title Styling */
-        h2 {
-            color: #4a90e2;
-            font-size: 1.8em;
+            border: 4px solid #ffda79;
             margin-bottom: 15px;
-            font-weight: 600;
+        }
+        .contact-info {
+            font-size: 0.9em;
+            text-align: center;
+        }
+        .contact-info a {
+            color: #ffda79;
+            text-decoration: none;
+        }
+
+        /* Main Content Styling */
+        .content {
+            margin-left: 270px;
+            padding: 40px;
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .section h2 {
+            color: #4a90e2;
+            font-size: 1.6em;
+            margin-bottom: 10px;
         }
         .section {
-            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-5px);
         }
 
         /* Project Cards */
         .project {
             margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 6px;
-            background-color: #f9f9f9;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .project h3 {
             color: #333;
@@ -89,6 +109,7 @@
         }
         ul li {
             margin-bottom: 8px;
+            color: #555;
         }
 
         /* Footer Styling */
@@ -98,32 +119,26 @@
             background-color: #333;
             color: white;
             font-size: 0.9em;
-        }
-        
-        /* Contact Information */
-        .contact-info {
-            font-size: 1em;
-            margin-top: 10px;
-        }
-        .contact-info a {
-            color: #ffda79;
-            text-decoration: none;
+            border-radius: 12px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <!-- Profile Image Placeholder -->
+    <!-- Sidebar with Profile and Contact Info -->
+    <div class="sidebar">
         <img src="https://github.com/aravindanpalani/aravindan-profile/blob/main/photo.png?raw=true" alt="Aravindan Profile Picture" class="profile-image">
         <h1>Aravindan P</h1>
         <p>Embedded Software Engineer</p>
         <div class="contact-info">
-            <p>Email: <a href="mailto:paravindanpalani@gmail.com">paravindanpalani@gmail.com</a> | Phone: +91-9944607314</p>
+            <p>Email: <a href="mailto:paravindanpalani@gmail.com">paravindanpalani@gmail.com</a></p>
+            <p>Phone: +91-9944607314</p>
         </div>
-    </header>
+    </div>
 
-    <div class="container">
+    <!-- Main Content Area -->
+    <div class="content">
         <section class="section">
             <h2>Objective</h2>
             <p>Seeking a challenging role in a reputable organization to leverage my technical and management skills, contribute to organizational growth, and deepen my expertise in embedded systems and emerging technologies.</p>
@@ -182,20 +197,6 @@
                 <p><strong>Environment:</strong> C++, C, Linux, Git, SVN, GDB, GCC</p>
                 <p><strong>Contribution:</strong> Bug fixes for live issues, improvements to the login module.</p>
             </div>
-
-            <div class="project">
-                <h3>Currenex</h3>
-                <p><strong>Client:</strong> State Street Corporation</p>
-                <p><strong>Environment:</strong> C++, C, Linux, Git, SVN, GDB, GCC</p>
-                <p><strong>Contribution:</strong> Development of RFQ-Trading module, bug fixing for live issues.</p>
-            </div>
-
-            <div class="project">
-                <h3>Angel Broking</h3>
-                <p><strong>Client:</strong> Angel One Limited</p>
-                <p><strong>Environment:</strong> C++, C, Linux, Git, SVN, GDB, GCC</p>
-                <p><strong>Contribution:</strong> Fixed bugs in the live environment for enhanced trading app functionality.</p>
-            </div>
         </section>
 
         <section class="section">
@@ -226,11 +227,11 @@
                 <li>Device Drivers</li>
             </ul>
         </section>
-    </div>
 
-    <footer>
-        <p>&copy; 2023 Aravindan P. All Rights Reserved.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2023 Aravindan P. All Rights Reserved.</p>
+        </footer>
+    </div>
 
 </body>
 </html>
