@@ -39,6 +39,7 @@
             flex-direction: column;
             align-items: center;
             transition: width 0.3s;
+            z-index: 1000;
         }
 
         .sidebar h1 {
@@ -209,6 +210,7 @@
             .sidebar {
                 width: 200px;
                 padding: 20px;
+                transition: width 0.3s;
             }
 
             .content {
@@ -233,10 +235,7 @@
 
         @media (max-width: 480px) {
             .sidebar {
-                width: 100%;
-                position: relative;
-                height: auto;
-                padding: 15px;
+                display: none; /* Hide sidebar on mobile */
             }
 
             .content {
@@ -250,10 +249,6 @@
                 height: 80px;
             }
 
-            .sidebar h1 {
-                font-size: 1.3em;
-            }
-
             h2 {
                 font-size: 1.2em;
             }
@@ -262,6 +257,19 @@
                 width: 40px;
                 height: 40px;
                 font-size: 1.2em;
+            }
+
+            /* Navigation Button for Mobile */
+            .nav-toggle {
+                display: block;
+                background-color: #4a90e2;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 15px;
+                cursor: pointer;
+                font-size: 1em;
+                margin: 20px 0;
             }
         }
     </style>
@@ -282,6 +290,8 @@
 
     <!-- Main Content Area -->
     <div class="content">
+        <button class="nav-toggle" onclick="toggleSidebar()">☰ Menu</button> <!-- Mobile Navigation Button -->
+
         <section class="section">
             <h2>Objective</h2>
             <p>Seeking a challenging role in a reputable organization to leverage my technical and management skills,
@@ -296,19 +306,9 @@
         </section>
 
         <section class="section">
-            <h2>Professional Profile</h2>
-            <ul>
-                <li>Experience with ESP32, LC8822 LED Module, Linux, FreeRTOS.</li>
-                <li>Programming skills: C, C++, Python, Shell Scripting.</li>
-                <li>Familiar with GIT, SVN, IPC messaging, UART, I2C, SPI interfaces, and more.</li>
-                <li>Knowledgeable in device drivers, kernel, u-boot, TCP/IP, UDP protocols.</li>
-            </ul>
-        </section>
-
-        <section class="section">
             <h2>Experience</h2>
             <ul>
-                <li><strong>SAMA Nextgen India Pvt Ltd, Bangalore:</strong> June 2022 - Present</li>
+                <li><strong>Sama NextGen India Pvt Ltd, Bangalore:</strong> June 2022 - Present</li>
                 <li><strong>Market Simplified India Limited, Chennai:</strong> January 2021 - June 2022</li>
             </ul>
         </section>
@@ -374,6 +374,12 @@
     </div>
 
     <script>
+        // Toggle sidebar visibility on mobile
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+        }
+
         // JavaScript for modal and back-to-top button
         function openModal(project) {
             const modal = document.getElementById("myModal");
