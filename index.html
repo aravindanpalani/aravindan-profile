@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aravindan P | Embedded Software Engineer</title>
 
-    <!-- Custom Font -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
     <style>
         /* Basic Reset and Font */
         * {
@@ -15,13 +17,14 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f4f4f9;
             color: #333;
             display: flex;
             min-height: 100vh;
-            overflow-x: hidden;
+            flex-direction: column;
         }
 
         /* Sidebar Styling */
@@ -35,18 +38,22 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: width 0.3s;
         }
+
         .sidebar h1 {
             font-size: 1.8em;
             margin-bottom: 10px;
             text-align: center;
         }
+
         .sidebar p {
             font-size: 0.95em;
             opacity: 0.8;
             margin-bottom: 40px;
             text-align: center;
         }
+
         .profile-image {
             width: 120px;
             height: 120px;
@@ -54,62 +61,136 @@
             border: 4px solid #ffda79;
             margin-bottom: 15px;
         }
+
         .contact-info {
             font-size: 0.9em;
             text-align: center;
         }
+
         .contact-info a {
             color: #ffda79;
             text-decoration: none;
         }
 
-        /* Main Content Styling */
+        /* Main Content Area */
         .content {
             margin-left: 270px;
             padding: 40px;
-            width: 100%;
-            max-width: 900px;
+            width: calc(100% - 270px);
             display: flex;
             flex-direction: column;
             gap: 30px;
         }
-        .section h2 {
-            color: #4a90e2;
-            font-size: 1.6em;
-            margin-bottom: 10px;
-        }
+
+        /* Section Styling */
         .section {
             background-color: #fff;
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .section:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #4a90e2;
+            font-size: 1.6em;
+            margin-bottom: 10px;
         }
 
         /* Project Cards */
         .project {
             margin-bottom: 20px;
+            padding: 10px;
+            background: #eaeaea;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+            cursor: pointer;
         }
+
+        .project:hover {
+            background: #d0d0d0;
+        }
+
         .project h3 {
             color: #333;
             font-size: 1.2em;
             margin-bottom: 5px;
             font-weight: 600;
         }
+
         .project p {
             font-size: 0.95em;
             color: #666;
         }
+
         ul {
             list-style: none;
             padding-left: 0;
         }
+
         ul li {
             margin-bottom: 8px;
             color: #555;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none; /* Hidden by default */
         }
 
         /* Footer Styling */
@@ -122,8 +203,46 @@
             border-radius: 12px;
             margin-top: 20px;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .content {
+                margin-left: 220px;
+                width: calc(100% - 220px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 150px;
+                padding: 20px;
+            }
+
+            .content {
+                margin-left: 170px;
+                width: calc(100% - 170px);
+            }
+
+            .profile-image {
+                width: 80px;
+                height: 80px;
+            }
+
+            .sidebar h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Sidebar with Profile and Contact Info -->
@@ -141,12 +260,15 @@
     <div class="content">
         <section class="section">
             <h2>Objective</h2>
-            <p>Seeking a challenging role in a reputable organization to leverage my technical and management skills, contribute to organizational growth, and deepen my expertise in embedded systems and emerging technologies.</p>
+            <p>Seeking a challenging role in a reputable organization to leverage my technical and management skills,
+                contribute to organizational growth, and deepen my expertise in embedded systems and emerging
+                technologies.</p>
         </section>
 
         <section class="section">
             <h2>Career Summary</h2>
-            <p>Over 3.6 years of experience in embedded software design and development, with a strong background in problem-solving, debugging, and continuous learning.</p>
+            <p>Over 3.6 years of experience in embedded software design and development, with a strong background in
+                problem-solving, debugging, and continuous learning.</p>
         </section>
 
         <section class="section">
@@ -170,68 +292,130 @@
         <section class="section">
             <h2>Projects</h2>
 
-            <div class="project">
-                <h3>Communication Bridge on Jio ONT and STB for IoT Devices</h3>
+            <div class="project" onclick="openModal('proj1')">
+                <h3>Communication Bridge on Jio ONT and STB</h3>
                 <p><strong>Client:</strong> Reliance Jio Infocom Limited</p>
-                <p><strong>Environment:</strong> C, Linux, GitLab</p>
-                <p><strong>Contribution:</strong> Enabled TCP communication and IPC messaging between IoT device and ONT, designed log capture mechanism.</p>
             </div>
 
-            <div class="project">
+            <div class="project" onclick="openModal('proj2')">
                 <h3>Jio IP Camera</h3>
                 <p><strong>Client:</strong> Reliance Jio Infocom Limited</p>
-                <p><strong>Environment:</strong> C, Linux, GitLab</p>
-                <p><strong>Contribution:</strong> Worked on BSP, secure boot, and SSL certification; developed drivers for RAM realignment and device diagnostics.</p>
             </div>
 
-            <div class="project">
+            <div class="project" onclick="openModal('proj3')">
                 <h3>Jio Smart Speaker</h3>
                 <p><strong>Client:</strong> Reliance Jio Infocom Limited</p>
-                <p><strong>Environment:</strong> C, ESP32 IDF, FreeRTOS, Linux, GitLab</p>
-                <p><strong>Contribution:</strong> Developed BLE OTA update, LC8822 LED module, and test cases for device diagnostics.</p>
             </div>
 
-            <div class="project">
+            <div class="project" onclick="openModal('proj4')">
                 <h3>Street Smart Mobile</h3>
                 <p><strong>Client:</strong> Charles Schwab Corporation</p>
-                <p><strong>Environment:</strong> C++, C, Linux, Git, SVN, GDB, GCC</p>
-                <p><strong>Contribution:</strong> Bug fixes for live issues, improvements to the login module.</p>
             </div>
-        </section>
 
-        <section class="section">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>Operating Systems:</strong> Linux, Windows, FreeRTOS</li>
-                <li><strong>Version Control:</strong> GitHub, GitLab, SVN</li>
-                <li><strong>Protocols:</strong> UART, I2C</li>
-                <li><strong>Programming Languages:</strong> C, C++, Python, Shell Scripting</li>
-            </ul>
+            <div class="project" onclick="openModal('proj5')">
+                <h3>Currenex</h3>
+                <p><strong>Client:</strong> State Street Corporation</p>
+            </div>
+
+            <div class="project" onclick="openModal('proj6')">
+                <h3>Angel Broking</h3>
+                <p><strong>Client:</strong> Angel One Limited</p>
+            </div>
         </section>
 
         <section class="section">
             <h2>Education</h2>
             <ul>
-                <li><strong>Advanced Course in Embedded Systems</strong> – Vector India Embedded Systems Training Institute, Bengaluru, 2019</li>
-                <li><strong>B.E., Electrical and Electronics Engineering</strong> – Government College of Engineering, Dharmapuri, 2014-2018</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2>Area of Interest</h2>
-            <ul>
-                <li>Embedded Systems</li>
-                <li>Internet of Things (IoT)</li>
-                <li>Programming</li>
-                <li>Operating Systems</li>
-                <li>Device Drivers</li>
+                <li><strong>2019:</strong> Advanced Course in Embedded Systems, Vector India Embedded Systems Training Institute, Bengaluru.</li>
+                <li><strong>2014 - 2018:</strong> B.E. in Electrical and Electronics Engineering, Government College of Engineering, Dharmapuri.</li>
             </ul>
         </section>
 
         <footer>
-            <p>&copy; 2023 Aravindan P. All Rights Reserved.</p>
+            <p>© 2024 Aravindan P. All Rights Reserved.</p>
         </footer>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top" onclick="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!-- Modal for Project Details -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+        </div>
     </div>
 
+    <script>
+        // JavaScript for modal and back-to-top button
+        function openModal(project) {
+            const modal = document.getElementById("myModal");
+            const title = document.getElementById("modal-title");
+            const description = document.getElementById("modal-description");
+
+            switch (project) {
+                case 'proj1':
+                    title.innerText = "Communication Bridge on Jio ONT and STB";
+                    description.innerText = "This project involves communication between IoT devices and Jio ONT/STB using TCP Communication through MQTT from oblo cloud. Contributions include Telnet via TCP for communication and IPC Message queues for data transfer.";
+                    break;
+                case 'proj2':
+                    title.innerText = "Jio IP Camera";
+                    description.innerText = "The Jio IP Camera project, based on Ingenic T40, includes features like human detection, line crossing, and face detection. Contributions involve device driver modifications and enabling secure boot.";
+                    break;
+                case 'proj3':
+                    title.innerText = "Jio Smart Speaker";
+                    description.innerText = "A voice-based smart speaker that supports Jio VA and mobile music playback. Contributions include development of BLE OTA Update and device diagnostics.";
+                    break;
+                case 'proj4':
+                    title.innerText = "Street Smart Mobile";
+                    description.innerText = "A lightweight trading application specializing in various security types. Contributions included bug fixing and enhancements to the login module.";
+                    break;
+                case 'proj5':
+                    title.innerText = "Currenex";
+                    description.innerText = "A Forex trading application focusing on currency pairs. Contributions include RFQ-Trading development and live issue fixes.";
+                    break;
+                case 'proj6':
+                    title.innerText = "Angel Broking";
+                    description.innerText = "A mobile trading app that offers multi-asset trading. Contributions include addressing live trading issues.";
+                    break;
+                default:
+                    title.innerText = "";
+                    description.innerText = "";
+            }
+
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function (event) {
+            const modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Scroll to top functionality
+        window.onscroll = function () {
+            const button = document.querySelector(".back-to-top");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
+
 </html>
