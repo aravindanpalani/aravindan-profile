@@ -3,83 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aravindan's Profile</title>
+    <title>Aravindan P | Embedded Software Engineer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-        }
-        .profile {
-            width: 100%;
-            max-width: 500px;
-            background-color: #ffffff;
-            padding: 40px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            border-radius: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .profile:hover {
-            transform: scale(1.02);
-        }
-        img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 5px solid #4a90e2;
-        }
-        h1 {
-            font-size: 2.2em;
+            background-color: #f7f9fc;
             color: #333;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-        .tagline {
-            font-size: 1.1em;
-            color: #4a90e2;
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-        .description {
-            font-size: 1em;
-            color: #666666;
             line-height: 1.6;
-            margin-bottom: 30px;
-            padding: 0 15px;
         }
-        .button {
-            padding: 12px 30px;
+        header {
             background-color: #4a90e2;
-            color: #ffffff;
-            border: none;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 1em;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s, transform 0.2s;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
-        .button:hover {
-            background-color: #357ABD;
-            transform: translateY(-2px);
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #4a90e2;
+            margin-top: 20px;
+        }
+        .contact-info, .section {
+            margin-bottom: 20px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin-bottom: 8px;
+        }
+        .project {
+            margin-bottom: 10px;
+        }
+        .project h3 {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .project p {
+            margin: 2px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <div class="profile">
-        <img src="https://github.com/aravindanpalani/aravindan-profile/raw/main/photo.png" alt="Aravindan's Profile Picture">
-        <h1>Aravindan</h1>
-        <p class="tagline">Software Developer | Enthusiastic Learner | Tech Enthusiast</p>
-        <p class="description">Welcome to my profile page! I'm passionate about coding, problem-solving, and building projects that make a difference. Let's connect and explore innovative solutions together.</p>
-        
-        <a href="mailto:aravindan@example.com" class="button">Contact Me</a>
+
+    <header>
+        <h1>Aravindan P</h1>
+        <p>Embedded Software Engineer</p>
+        <p>Email: <a href="mailto:paravindanpalani@gmail.com" style="color: white;">paravindanpalani@gmail.com</a> | Phone: +91-9944607314</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Objective</h2>
+            <p>Seeking a challenging role in a reputable organization to leverage my technical and management skills, contribute to organizational growth, and deepen my expertise in embedded systems and emerging technologies.</p>
+        </section>
+
+        <section class="section">
+            <h2>Career Summary</h2>
+            <p>Over 3.6 years of experience in embedded software design and development, with a strong background in problem-solving, debugging, and continuous learning.</p>
+        </section>
+
+        <section class="section">
+            <h2>Professional Profile</h2>
+            <ul>
+                <li>Proficient in ESP32, LC8822 LED Module, Linux, and FreeRTOS.</li>
+                <li>Experienced in C, C++, Python, and Shell scripting.</li>
+                <li>Skilled in device drivers, kernel, u-boot, TCP/IP, and UDP protocols.</li>
+                <li>Familiar with GIT, SVN, IPC messaging, UART, I2C, SPI interfaces, and more.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Experience</h2>
+            <ul>
+                <li><strong>SAMA NextGen India Pvt Ltd, Bangalore</strong> – June 2022 to Present</li>
+                <li><strong>Market Simplified India Limited, Chennai</strong> – January 2021 to June 2022</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Communication Bridge on Jio ONT and STB for IoT Devices</h3>
+                <p><strong>Client:</strong> Reliance Jio Infocom Limited</p>
+                <p><strong>Description:</strong> Enables IoT device communication with Jio ONT and STB via MQTT.</p>
+                <p><strong>Contribution:</strong> Developed TCP communication, IPC messaging, and log capturing.</p>
+            </div>
+            <div class="project">
+                <h3>Jio IP Camera</h3>
+                <p><strong>Client:</strong> Reliance Jio Infocom Limited</p>
+                <p><strong>Description:</strong> IP Camera with human detection, line crossing, and face detection.</p>
+                <p><strong>Contribution:</strong> Worked on BSP, device drivers, secure boot, and SSL certification.</p>
+            </div>
+            <!-- Add more projects as necessary -->
+        </section>
+
+        <section class="section">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Operating Systems:</strong> Linux, Windows, FreeRTOS</li>
+                <li><strong>Version Control:</strong> GitHub, GitLab, SVN</li>
+                <li><strong>Protocols:</strong> UART, I2C</li>
+                <li><strong>Programming Languages:</strong> C, C++, Python, Shell Scripting</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <ul>
+                <li><strong>Advanced Course in Embedded Systems</strong> – Vector India Embedded Systems Training Institute, Bengaluru, 2019</li>
+                <li><strong>B.E., Electrical and Electronics Engineering</strong> – Government College of Engineering, Dharmapuri, 2014-2018</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Area of Interest</h2>
+            <ul>
+                <li>Embedded systems</li>
+                <li>Internet of Things (IoT)</li>
+                <li>Programming</li>
+                <li>Operating Systems</li>
+                <li>Device Drivers</li>
+            </ul>
+        </section>
     </div>
+
+    <footer>
+        <p>&copy; 2023 Aravindan P. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
