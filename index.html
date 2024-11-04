@@ -208,23 +208,41 @@
         @media (max-width: 768px) {
             .sidebar {
                 width: 200px;
+                padding: 20px;
             }
 
             .content {
                 margin-left: 220px;
                 width: calc(100% - 220px);
+                padding: 20px;
+            }
+
+            .sidebar h1 {
+                font-size: 1.5em;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            h2 {
+                font-size: 1.4em;
             }
         }
 
         @media (max-width: 480px) {
             .sidebar {
-                width: 150px;
-                padding: 20px;
+                width: 100%;
+                position: relative;
+                height: auto;
+                padding: 15px;
             }
 
             .content {
-                margin-left: 170px;
-                width: calc(100% - 170px);
+                margin-left: 0;
+                width: 100%;
+                padding: 15px;
             }
 
             .profile-image {
@@ -233,11 +251,17 @@
             }
 
             .sidebar h1 {
-                font-size: 1.5em;
+                font-size: 1.3em;
             }
 
             h2 {
-                font-size: 1.4em;
+                font-size: 1.2em;
+            }
+
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2em;
             }
         }
     </style>
@@ -284,14 +308,13 @@
         <section class="section">
             <h2>Experience</h2>
             <ul>
-                <li><strong>SAMA NextGen India Pvt Ltd, Bangalore</strong> – June 2022 to Present</li>
-                <li><strong>Market Simplified India Limited, Chennai</strong> – January 2021 to June 2022</li>
+                <li><strong>SAMA Nextgen India Pvt Ltd, Bangalore:</strong> June 2022 - Present</li>
+                <li><strong>Market Simplified India Limited, Chennai:</strong> January 2021 - June 2022</li>
             </ul>
         </section>
 
         <section class="section">
             <h2>Projects</h2>
-
             <div class="project" onclick="openModal('proj1')">
                 <h3>Communication Bridge on Jio ONT and STB</h3>
                 <p><strong>Client:</strong> Reliance Jio Infocom Limited</p>
